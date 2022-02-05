@@ -1,0 +1,158 @@
+@import "rotate.css";
+
+.progress-circle{
+    display: inline-block;
+    position: relative;      
+    box-sizing: border-box;      
+    font-size: 10em;             
+    font-family: "Open Sans",Verdana,sans-serif;
+    text-align: center;
+    color: #ccc;
+    width: 1em;    
+    height: 1em;   
+    margin: 0 .1em;
+    border-width: .15em;
+    border-style: solid;
+    border-radius: 50%;    
+    border: .15em solid #CDE;  
+    background-color: #FFF;    
+  }
+  .progress-circle.red .progress-masque {
+    border-color: #B40000;          
+    font-style: italic;
+  }
+  .progress-circle.thin,
+.progress-circle.thin .progress-barre,
+.progress-circle.thin .progress-sup50 {
+  border-width: .075em;          
+}
+.progress-circle.thin .progress-masque {
+  left: -.075em;           
+  top: -.075em;            
+}
+  .progress-masque {
+    position: absolute;
+    width: 1em;           
+    height: 1em;          
+    left: -.15em;     
+    top: -.15em;  
+    clip: rect(0, 1em, 1em, .5em); 
+    border-color: #069;             
+  }
+  
+  
+  ._progress-circle:after {
+    display: block;
+    content: attr(data-value) "%";
+    font-size:.2em;                 
+    line-height:3em;                
+
+  }
+  
+  ._progress-circle:after {
+    content: attr(data-value) "%";
+    position: absolute;
+    font-size:.2em;                      
+    top: 50%;                       
+    transform: translateY(-50%);
+    display: inline-block;
+    line-height: normal;            
+    right: 0;                       
+    left: 0;
+  }
+  
+  
+  .progress-circle:after {
+    content: attr(data-value) "%";
+    font-size: 0.15em;
+  /*  line-height: normal;/*--*/
+  /*  right: 0px; /*--*/
+  /*  left: 0px; /*--*/
+    height: 100%;  
+  /*  background: #FFF; */
+  /*  vertical-align: middle;/*--*/
+    display: flex;
+  /*  position: absolute;/*--*/
+  /*
+    top: 50%;
+    transform: translateY(-50%);
+  /*-- inutile avec flex --*/  
+    align-items: center;
+  /*  text-align: center;/*--*/
+    justify-content: center;
+  
+  /**/    
+    border-radius: 50%;
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .5) inset;   
+  /*-- --*/  
+  }
+  
+  
+  .progress-barre,
+  .progress-sup50 {
+    position: absolute;
+    box-sizing: border-box;
+    border-width: .15em;       
+    border-style: solid;
+    border-color: inherit;          
+    border-radius: 50%;
+    width: 1em;    
+    height: 1em;   
+    transform: rotate(0deg);
+  }
+  .progress-barre {
+    clip: rect(0, .5em, 1em, 0);
+  }
+  .progress-sup50 {
+    display:none;
+    clip: rect(0, 1em, 1em, .5em);
+  }
+
+  /* 
+  .progress-circle[class*=sup50] .progress-masque {
+    clip: rect(auto, auto, auto, auto);
+  }
+  .progress-circle[class*=sup50] .progress-sup50 {
+    display:block;
+  }
+  /**/
+  .progress-circle[data-value^='5']:not([data-value='5']):not([data-value^='5.']) .progress-masque,
+  .progress-circle[data-value^='6']:not([data-value='6']):not([data-value^='6.']) .progress-masque,
+  .progress-circle[data-value^='7']:not([data-value='7']):not([data-value^='7.']) .progress-masque,
+  .progress-circle[data-value^='8']:not([data-value='8']):not([data-value^='8.']) .progress-masque,
+  .progress-circle[data-value^='9']:not([data-value='9']):not([data-value^='9.']) .progress-masque,
+  .progress-circle[data-value^='100'] .progress-masque{
+    clip: rect(auto, auto, auto, auto);
+  }
+  .progress-circle[data-value^='5']:not([data-value='5']):not([data-value^='5.']) .progress-sup50,
+  .progress-circle[data-value^='6']:not([data-value='6']):not([data-value^='6.']) .progress-sup50,
+  .progress-circle[data-value^='7']:not([data-value='7']):not([data-value^='7.']) .progress-sup50,
+  .progress-circle[data-value^='8']:not([data-value='8']):not([data-value^='8.']) .progress-sup50,
+  .progress-circle[data-value^='9']:not([data-value='9']):not([data-value^='9.']) .progress-sup50,
+  .progress-circle[data-value^='100'] .progress-sup50{
+    display:block;
+  }
+
+
+  .progress-circle.thin,
+  .progress-circle.thin .progress-barre,
+  .progress-circle.thin .progress-sup50 {
+    border-width: .075em;           
+  }
+  .progress-circle.thin .progress-masque {
+    left:-.075em;                   
+    top:-.075em;                    
+  }
+  
+  
+  
+
+  .progress-circle.thick,
+  .progress-circle.thick .progress-barre,
+  .progress-circle.thick .progress-sup50 {
+    border-width: .225em;           
+  }
+  .progress-circle.thick .progress-masque {
+    left:-.225em;                   
+    top:-.225em;                    
+  }
